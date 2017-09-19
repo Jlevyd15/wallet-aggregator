@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fields } from '../actions'
 
@@ -20,9 +21,9 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
-	id: React.PropTypes.string,
-	placeholder: React.PropTypes.string,
-	handleOnChange: React.PropTypes.func,
+	id: PropTypes.string.isRequired,
+	placeholder: PropTypes.string,
+	handleOnChange: PropTypes.func,
 }
 
 const mapDispatchToProps = (dispatch) => ({
