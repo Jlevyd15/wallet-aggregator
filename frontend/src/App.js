@@ -3,6 +3,9 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Login from './pages/LoginPage'
 import Users from './pages/UsersPage'
+import Landing from './pages/LandingPage'
+
+import PageLayout from './pages/PageLayout'
 
 import { isAuthenticated } from './utils/auth'
 
@@ -11,12 +14,15 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          {/*<Route exact path="/" component={LANDING PAGE COMPONENT HERE} />
-          
-          <MatchWhenAuthorized path="/dashboard" name="Home" component={Full}/>*/}
-          <Route exact path="/login" component={Login} />
-          {/*<MatchWhenAuthorized path="/days" component={DayForm} />*/}
-          <MatchWhenAuthorized path="/getUsers" component={Users} />
+          <PageLayout>
+            {/*<Route exact path="/" component={LANDING PAGE COMPONENT HERE} />
+            
+            <MatchWhenAuthorized path="/dashboard" name="Home" component={Full}/>*/}
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/login" component={Login} />
+            {/*<MatchWhenAuthorized path="/days" component={DayForm} />*/}
+            <MatchWhenAuthorized path="/getUsers" component={Users} />
+          </PageLayout>
         </Switch>
       </BrowserRouter>
     );
@@ -25,7 +31,7 @@ class App extends Component {
 
 const MatchWhenAuthorized = ({component: Component, ...rest}) => (
   <Route {...rest} render={renderProps => (
-    isAuthenticated(true) ? (
+    isAuthenticated() ? (
       <Component {...renderProps} />
     ) : (
       <Redirect to={{

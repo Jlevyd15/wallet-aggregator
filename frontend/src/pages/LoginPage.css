@@ -1,0 +1,21 @@
+.login-page-container {
+	background-color: #34495E;
+	padding: 20px;
+	border-radius: 3px;
+	border: 1px solid grey;
+	color: white;
+	width: 50%;
+	margin: auto;
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+	.login-page-container {
+		width: 100%;
+	}
+}
