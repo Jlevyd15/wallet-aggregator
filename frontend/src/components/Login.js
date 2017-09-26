@@ -52,7 +52,7 @@ export class Login extends Component {
 		return (
 			<div className="login-contianer">
 				<Form id={'login.Form'} submitHandler={this.handleSubmit} fieldIds={fieldIds} >
-					<div className="wrapper">
+					<div className="login-grid">
 						<div className="one"><label>Email</label></div>
 						<div className="two"><Input id={'email.Input'} dataType="email" /></div>
 						<div className="three"><label>Password</label></div>
