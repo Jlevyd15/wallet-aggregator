@@ -1,18 +1,27 @@
 import Immutable from 'immutable';
 import FieldRecord from '../records/fieldRecord';
 
-import { UPDATE_FIELD, ERROR_FIELD } from '../actions/actionTypes';
+import { INIT_FIELD, UPDATE_FIELD, ERROR_FIELD } from '../actions/actionTypes';
 
 
 const fieldReducer = (fields = Immutable.Map({}), action) => {
 	// console.log(action)
 	switch (action.type) {
+		case INIT_FIELD: {
+			return fields.update(action.id, new FieldRecord(), field => {
+				return field.merge({
+					Id: action.id,
+					dataType: action.dataType || 'alphaNumberic',
+					required: action.required
+				})
+			})
+		}
 		case UPDATE_FIELD: {
 			return fields.update(action.id, new FieldRecord(), field => {
 				return field.merge({
 					Id: action.id,
 					value: action.value,
-					dataType: action.dataType
+					dataType: action.dataType || 'alphaNumberic'
 				})
 			})
 		}

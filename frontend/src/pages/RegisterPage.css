@@ -1,4 +1,4 @@
-.login-page-container {
+.register-page-container {
 	background-color: #34495E;
 	padding: 20px;
 	border-radius: 3px;
@@ -11,7 +11,7 @@
 
 @media (min-width: 700px) {
 
-	.login-page-container {
+	.register-page-container {
 		width: 50%;
 	}
 }

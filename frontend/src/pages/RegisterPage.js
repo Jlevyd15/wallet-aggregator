@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Register from '../components/Register'
+import './RegisterPage.css'
 
 const RegisterPage = ({ children }) => {
 	return (
-		<div>
+		<div className="register-page-container">
 			<h1>Register</h1>
 			<Register />
 		</div>

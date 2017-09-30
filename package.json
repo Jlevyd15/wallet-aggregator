@@ -15,6 +15,7 @@
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.0",
     "pug": "~2.0.0-beta11",
+    "redux-bug-reporter": "^1.2.0",
     "serve-favicon": "~2.4.2"
   },
   "dependencies": {

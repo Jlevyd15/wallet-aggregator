@@ -16,6 +16,7 @@ export class Form extends Component {
 
 	formCallback(e) {
 		e.preventDefault()
+		console.log('form submit callback')
 		// validate the form and fields
 		const fieldValidationResults = formValidator(this.props.formFields)
 		// set state of fields validation in redux
@@ -32,7 +33,7 @@ export class Form extends Component {
 		return (
 			<div>
 				<FormError form={this.props.form} />
-				<form id={'login.Form'} onSubmit={this.formCallback}>
+				<form id={this.props.id} onSubmit={this.formCallback}>
 					{this.props.children}
 				</form>
 			</div>
@@ -41,7 +42,7 @@ export class Form extends Component {
 }
 
 Form.propTypes = {
-	id: PropTypes.string,
+	id: PropTypes.string.isRequired,
 	submitHandler: PropTypes.func.isRequired,
 	fieldIds: PropTypes.array.isRequired
 }

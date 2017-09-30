@@ -7,7 +7,7 @@ import Button from './Button'
 import './Login.css'
 
 const fieldIds = [
-	'email.Input', 'password.Input'
+	'email.Input.Login', 'password.Input.Login'
 ]
 
 export class Login extends Component {
@@ -54,10 +54,10 @@ export class Login extends Component {
 				<Form id={'login.Form'} submitHandler={this.handleSubmit} fieldIds={fieldIds} >
 					<div className="login-grid">
 						<div className="one"><label>Email</label></div>
-						<div className="two"><Input id={'email.Input'} dataType="email" /></div>
+						<div className="two"><Input id={'email.Input.Login'} dataType="email" required={true} /></div>
 						<div className="three"><label>Password</label></div>
-						<div className="four"><Input id={'password.Input'} dataType="password" type="password" /></div>
-						<div className="five"><Button type="submit" btnStyle="btn btn-secondary">Register</Button></div>
+						<div className="four"><Input id={'password.Input.Login'} dataType="password" type="password" required={true} /></div>
+						<div className="five"><Button callback={() => this.props.history.push('/register')} btnStyle="btn btn-secondary">Register</Button></div>
 						<div className="six"><Button type="submit" btnStyle="btn btn-primary">Login</Button></div>
 	      			</div>	
 		      	</Form>
